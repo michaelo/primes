@@ -7,6 +7,11 @@ pub fn build(b: *std.build.Builder) void {
 
     const lib = b.addStaticLibrary("core", "src/main.zig");
     lib.setBuildMode(mode);
+    lib.linkSystemLibraryName("SDL2");
+    lib.linkSystemLibraryName("SDL2_image");
+    lib.linkLibC();
+    const target = b.standardTargetOptions(.{});
+    lib.setTarget(target);
     lib.install();
 
     const main_tests = b.addTest("src/main.zig");

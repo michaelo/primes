@@ -13,6 +13,11 @@ pub fn build(b: *std.build.Builder) void {
 
     const exe = b.addExecutable("desktop", "src/main.zig");
     exe.setTarget(target);
+    exe.addSystemIncludePath("/usr/local/include");
+    exe.linkSystemLibraryName("SDL2");
+    exe.linkSystemLibraryName("SDL2_image");
+    exe.linkLibC();
+    exe.addPackagePath("core", "../core/src/main.zig");
     exe.setBuildMode(mode);
     exe.install();
 
