@@ -16,6 +16,7 @@ pub fn build(b: *std.build.Builder) void {
     exe.addSystemIncludePath("/usr/local/include");
     exe.linkSystemLibraryName("SDL2");
     exe.linkSystemLibraryName("SDL2_image");
+    exe.linkSystemLibraryName("SDL2_ttf");
     exe.linkLibC();
     exe.addPackagePath("core", "../core/src/main.zig");
     exe.setBuildMode(mode);

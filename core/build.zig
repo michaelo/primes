@@ -9,6 +9,7 @@ pub fn build(b: *std.build.Builder) void {
     lib.setBuildMode(mode);
     lib.linkSystemLibraryName("SDL2");
     lib.linkSystemLibraryName("SDL2_image");
+    lib.linkSystemLibraryName("SDL2_ttf");
     lib.linkLibC();
     const target = b.standardTargetOptions(.{});
     lib.setTarget(target);

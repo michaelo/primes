@@ -6,13 +6,12 @@ Math-oriented puzzle game for (primarily) handheld devices.
 Scope:
 --------
 * Utilize old assets
-* Recreate original gameplay
-* Use zig and SDL2
+* Recreate original gameplay - i.e. no animations in-game, but will keep it in mind and try to accomodate for it
+* Use zig and SDL2 (SDL2, SDL2_image, SDL2_ttf, ...)
 
 Targets:
 --------
 * "desktop" for development, but primarily iOS for release. Then Android.
-
 
 Repository structure:
 --------
