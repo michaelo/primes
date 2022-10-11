@@ -1,0 +1,42 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "save",
+            "command": "${command:workbench.action.files.save}"
+        },
+        {
+            "label": "run",
+            "type": "shell",
+            "options": {"cwd": "desktop"},
+            "command": "zig build run",
+            "problemMatcher": [],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "presentation": {
+                "clear": true
+            },
+            "dependsOn": [
+                "save"
+            ]
+        },
+        {
+            "label": "test",
+            "type": "shell",
+            "options": {"cwd": "desktop"},
+            "command": "zig build test",
+            "group": {
+                "kind": "test"
+            },
+            "presentation": {
+                "clear": true
+            },
+            "dependsOn": [
+                "save"
+            ],
+            "problemMatcher": []
+        }
+    ]
+}
